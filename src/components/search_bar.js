@@ -1,12 +1,21 @@
-import React, { Component } from 'react';
+import React, {
+  Component
+} from 'react';
 
 export default class SearchBar extends Component {
-  contructor(props) {
+  constructor(props) {
     super(props);
 
-    this.state = { term: '' };
+    this.state = {
+      term: ''
+    };
   }
-  render () {
-    return <input onChange={(event) => console.log(event.target.value)} />;
+  render() {
+    return (
+      <div> 
+      	<input onChange={(event) => this.setState({ term: event.target.value })} />
+        Value of the input: {this.state.term}
+      </div>
+    );
   }
 };
